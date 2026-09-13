@@ -11,6 +11,9 @@
     "typecheck": "npm --prefix backend run typecheck && npm --prefix frontend run typecheck",
     "test:flow": "npm --prefix backend run test:flow",
     "seed:sql": "npm --prefix backend run seed:sql",
-    "dev:frontend:host": "npm --prefix frontend run dev:host"
+    "dev:frontend:host": "npm --prefix frontend run dev:host",
+    "dev": "bash scripts/dev.sh",
+    "dev:host": "bash scripts/dev.sh --host",
+    "stop": "bash scripts/stop.sh"
   }
 }

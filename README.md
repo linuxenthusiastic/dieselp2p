@@ -117,12 +117,30 @@ cp backend/.env.example backend/.env
 cp frontend/.env.example frontend/.env
 ```
 
-Levanta los dos procesos en terminales separadas:
+Levanta todo con un solo comando:
+
+```bash
+npm run dev          # API en :4000 y app en :5173
+npm run dev:host     # igual, pero accesible desde la red local
+```
+
+El script instala las dependencias si faltan, espera a que la API responda antes de abrir el frontend, libera los puertos si quedó una instancia previa y muestra las URLs listas para usar. **Ctrl+C detiene ambos procesos** sin dejar nada suelto.
+
+Si prefieres controlarlos por separado, en dos terminales:
 
 ```bash
 npm run dev:backend     # http://localhost:4000/api
 npm run dev:frontend    # http://localhost:5173
 ```
+
+### Si algo se queda colgado
+
+```bash
+npm run stop    # mata cualquier proceso de DieselP2P que haya quedado vivo
+npm run dev     # y vuelve a levantar todo
+```
+
+Nada reinicia los servidores automáticamente: son procesos de desarrollo atados a la terminal donde los lanzaste. Si cierras esa terminal, se detienen. Para dejarlos corriendo de forma independiente usa `nohup npm run dev > dieselp2p.log 2>&1 &` y detén con `npm run stop`.
 
 Abre **http://localhost:5173** y entra con cualquiera de los cuatro roles demo. No hace falta configurar Supabase para la demostración.
 
