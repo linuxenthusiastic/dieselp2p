@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowDown, Map, Target, ShieldCheck, AlertTriangle, BarChart3, Fuel, Tractor, Truck, Wheat, Network, Layers, Info, Plus } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
 import { DemoTag } from '../../components/ui/Logo';
+import { MatchingDeepDive } from '../../components/landing/MatchingDeepDive';
+import { Tracks } from '../../components/landing/Tracks';
 
 const STEPS = [
   { n: 1, title: 'Publica tu necesidad', text: 'El productor indica litros, ubicación y fecha requerida.' },
@@ -12,11 +14,31 @@ const STEPS = [
 ];
 
 const PILLARS = [
-  { icon: Target, title: 'Matching', text: 'Combina múltiples proveedores: 7.000 L + 3.000 L = 10.000 L. Score explicable de 0 a 100.' },
-  { icon: Map, title: 'Mapa', text: 'Oferta, demanda, transportistas y rutas sobre OpenStreetMap.' },
-  { icon: ShieldCheck, title: 'Trazabilidad', text: 'Código de operación, QR de verificación y estados de entrega.' },
-  { icon: AlertTriangle, title: 'Anomalías', text: 'Detección de volúmenes inusuales y patrones de riesgo con risk score.' },
-  { icon: BarChart3, title: 'Impacto', text: 'Litros conectados, km optimizados y ahorro logístico estimado.' },
+  {
+    icon: Target,
+    title: 'Matching',
+    text: 'Reparte una demanda entre varios proveedores buscando el menor costo total, y explica por qué recomienda esa combinación.',
+  },
+  {
+    icon: Map,
+    title: 'Mapa',
+    text: 'Ofertas, demandas, transportistas y rutas sobre OpenStreetMap. Ver dónde está el combustible cambia la decisión.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Trazabilidad',
+    text: 'Cada operación tiene código, estados de entrega y un QR verificable sin iniciar sesión. Quien entregó qué queda registrado.',
+  },
+  {
+    icon: AlertTriangle,
+    title: 'Anomalías',
+    text: 'Volúmenes fuera de patrón, solicitudes repetidas y secuencias sospechosas quedan marcadas con un nivel de riesgo para revisión.',
+  },
+  {
+    icon: BarChart3,
+    title: 'Impacto',
+    text: 'Volumen conectado, recorrido evitado y operaciones trazadas, agregados para ver el efecto de la plataforma en conjunto.',
+  },
 ];
 
 export default function LandingPage() {
@@ -28,7 +50,7 @@ export default function LandingPage() {
         <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-fuel-400/20 blur-3xl" />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-2 lg:py-28">
           <div className="animate-fade-up">
-            <DemoTag className="mb-6 border-fuel-300/40 bg-white/10 text-fuel-200" />
+            <DemoTag className="mb-6 border-fuel-300/70 bg-fuel-400/15 text-fuel-100" />
             <h1 className="text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
               Conectamos el combustible <span className="text-fuel-300">con quienes producen Bolivia.</span>
             </h1>
@@ -151,6 +173,10 @@ export default function LandingPage() {
           ))}
         </div>
       </section>
+
+      <MatchingDeepDive />
+
+      <Tracks />
 
       {/* CONCEPTO */}
       <section className="bg-brand-900 text-white">

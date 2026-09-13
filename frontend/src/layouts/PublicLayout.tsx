@@ -16,9 +16,12 @@ export function PublicLayout() {
             <a href="/#como-funciona" className="hover:text-slate-900">Cómo funciona</a>
             <a href="/#problema" className="hover:text-slate-900">El problema</a>
             <a href="/#solucion" className="hover:text-slate-900">Solución</a>
+            <a href="/#motor" className="hover:text-slate-900">El motor</a>
           </nav>
           <div className="flex items-center gap-2">
-            <DemoTag className="hidden sm:inline-flex" />
+            <span className="hidden sm:block">
+              <DemoTag />
+            </span>
             {session ? (
               <Link to="/app/dashboard">
                 <Button size="sm">Ir a la app</Button>
