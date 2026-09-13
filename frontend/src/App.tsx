@@ -28,6 +28,7 @@ const TransportPage = lazy(() => import('./pages/shared/TransportPage'));
 const NewDemandPage = lazy(() => import('./pages/producer/NewDemandPage'));
 // Proveedor
 const NewOfferPage = lazy(() => import('./pages/supplier/NewOfferPage'));
+const MarketPage = lazy(() => import('./pages/supplier/MarketPage'));
 // Transportista
 const TransportRoutePage = lazy(() => import('./pages/carrier/TransportRoutePage'));
 // Admin
@@ -67,6 +68,7 @@ export default function App() {
               <Route path="matches/:id" element={<MatchDetailPage />} />
             </Route>
             <Route element={<RequireRole roles={['supplier', 'admin']} />}>
+              <Route path="market" element={<MarketPage />} />
               <Route path="offers" element={<OffersPage />} />
               <Route path="offers/new" element={<NewOfferPage />} />
             </Route>

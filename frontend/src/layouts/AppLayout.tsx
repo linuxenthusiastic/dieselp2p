@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
-import { AlertTriangle, BarChart3, Fuel, Home, LogOut, Map, Menu, Package, Settings, Target, Truck, Users, X, UserCircle, Leaf } from 'lucide-react';
+import { AlertTriangle, BarChart3, Fuel, Home, LogOut, Map, Menu, Package, Settings, Store, Target, Truck, Users, X, UserCircle, Leaf } from 'lucide-react';
 import clsx from 'clsx';
 import { useAuth } from '../hooks/useAuth';
 import { Logo, DemoTag } from '../components/ui/Logo';
@@ -17,6 +17,7 @@ interface NavItem {
 const NAV: NavItem[] = [
   { to: '/app/dashboard', label: 'Dashboard', icon: Home, roles: ['producer', 'supplier', 'carrier', 'admin'] },
   { to: '/app/demands', label: 'Demandas', icon: Package, roles: ['producer', 'supplier', 'admin'] },
+  { to: '/app/market', label: 'Mercado P2P', icon: Store, roles: ['supplier', 'admin'] },
   { to: '/app/offers', label: 'Ofertas', icon: Fuel, roles: ['supplier', 'admin'] },
   { to: '/app/matches', label: 'Matches', icon: Target, roles: ['producer', 'supplier', 'admin'] },
   { to: '/app/transport', label: 'Transporte', icon: Truck, roles: ['carrier', 'admin'] },

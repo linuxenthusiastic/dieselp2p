@@ -4,6 +4,7 @@ import { Button } from '../../components/ui/Button';
 import { DemoTag } from '../../components/ui/Logo';
 import { MatchingDeepDive } from '../../components/landing/MatchingDeepDive';
 import { Tracks } from '../../components/landing/Tracks';
+import { Seguridad } from '../../components/landing/Seguridad';
 
 const STEPS = [
   { n: 1, title: 'Publica tu necesidad', text: 'El productor indica litros, ubicación y fecha requerida.' },
@@ -96,9 +97,9 @@ export default function LandingPage() {
               ))}
             </div>
             <div className="mt-4 grid grid-cols-3 gap-2 text-center text-xs">
-              <div className="rounded-lg bg-white/10 p-2"><p className="text-brand-200">Combustible</p><p className="font-bold">Bs 37.380</p></div>
-              <div className="rounded-lg bg-white/10 p-2"><p className="text-brand-200">Transporte</p><p className="font-bold">Bs 1.128</p></div>
-              <div className="rounded-lg bg-fuel-400/20 p-2 ring-1 ring-fuel-300/40"><p className="text-fuel-200">Ahorro est.</p><p className="font-bold text-fuel-200">Bs 4.101</p></div>
+              <div className="rounded-lg bg-white/10 p-2"><p className="text-brand-200">Combustible</p><p className="font-bold">Bs 189.900</p></div>
+              <div className="rounded-lg bg-white/10 p-2"><p className="text-brand-200">Transporte</p><p className="font-bold">Bs 3.432</p></div>
+              <div className="rounded-lg bg-fuel-400/20 p-2 ring-1 ring-fuel-300/40"><p className="text-fuel-200">Ahorro est.</p><p className="font-bold text-fuel-200">Bs 19.656</p></div>
             </div>
             <p className="mt-3 text-[11px] text-brand-200">Ejemplo con datos simulados del MVP.</p>
           </div>
@@ -175,6 +176,8 @@ export default function LandingPage() {
       </section>
 
       <MatchingDeepDive />
+
+      <Seguridad />
 
       <Tracks />
 

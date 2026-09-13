@@ -255,24 +255,24 @@ export function buildSeed(): SeedData {
   };
 
   // Caso principal: 10.000 L (Santa Cruz, 20/09/2026) => A 7.000 + B 3.000
-  const offerA = addOffer({ supplier: 1, liters: 7000, price: 3.72, availableInDays: 2 }); // Combustibles del Norte (Montero)
-  const offerB = addOffer({ supplier: 2, liters: 3000, price: 3.78, availableInDays: 3 }); // Distribuidora Warnes Energía
-  addOffer({ supplier: 3, liters: 8000, price: 4.05, availableInDays: 1 }); // Petro Oriente (más caro, cerca)
+  const offerA = addOffer({ supplier: 1, liters: 7000, price: 18.90, availableInDays: 2 }); // Combustibles del Norte (Montero)
+  const offerB = addOffer({ supplier: 2, liters: 3000, price: 19.20, availableInDays: 3 }); // Distribuidora Warnes Energía
+  addOffer({ supplier: 3, liters: 8000, price: 20.60, availableInDays: 1 }); // Petro Oriente (más caro, cerca)
   // Caso alternativo: 10.000 L (Cotoca, 28/09/2026) => 5.000 + 3.000 + 2.000 (disponibles después del 20/09)
-  addOffer({ supplier: 4, liters: 5000, price: 3.7, availableInDays: 11 });
-  addOffer({ supplier: 4, liters: 3000, price: 3.72, availableInDays: 12, zone: 'Pailón' });
-  addOffer({ supplier: 3, liters: 2000, price: 3.74, availableInDays: 11, zone: 'Cotoca' });
+  addOffer({ supplier: 4, liters: 5000, price: 18.80, availableInDays: 11 });
+  addOffer({ supplier: 4, liters: 3000, price: 18.90, availableInDays: 12, zone: 'Pailón' });
+  addOffer({ supplier: 3, liters: 2000, price: 19.00, availableInDays: 11, zone: 'Cotoca' });
   // Otras ofertas activas en distintas zonas
-  addOffer({ supplier: 5, liters: 12000, price: 3.68, availableInDays: 4 }); // Yacuiba
-  addOffer({ supplier: 6, liters: 9000, price: 3.75, availableInDays: 2 }); // Camiri
-  addOffer({ supplier: 7, liters: 15000, price: 3.7, availableInDays: 3 }); // Cochabamba
-  addOffer({ supplier: 8, liters: 6000, price: 3.8, availableInDays: 5 }); // Trinidad
-  addOffer({ supplier: 1, liters: 4000, price: 3.85, availableInDays: 9, zone: 'Mineros' });
-  addOffer({ supplier: 3, liters: 10000, price: 4.1, availableInDays: 6, zone: 'La Guardia' });
-  addOffer({ supplier: 6, liters: 5000, price: 3.79, availableInDays: 8, zone: 'Vallegrande' });
-  addOffer({ supplier: 2, liters: 2500, price: 3.9, availableInDays: 14, zone: 'Okinawa' });
-  addOffer({ supplier: 5, liters: 7000, price: 3.66, availableInDays: 10, zone: 'Tarija' });
-  addOffer({ supplier: 8, liters: 3500, price: 3.82, availableInDays: 7, zone: 'San Julián' });
+  addOffer({ supplier: 5, liters: 12000, price: 18.70, availableInDays: 4 }); // Yacuiba
+  addOffer({ supplier: 6, liters: 9000, price: 19.05, availableInDays: 2 }); // Camiri
+  addOffer({ supplier: 7, liters: 15000, price: 18.80, availableInDays: 3 }); // Cochabamba
+  addOffer({ supplier: 8, liters: 6000, price: 19.30, availableInDays: 5 }); // Trinidad
+  addOffer({ supplier: 1, liters: 4000, price: 19.55, availableInDays: 9, zone: 'Mineros' });
+  addOffer({ supplier: 3, liters: 10000, price: 20.85, availableInDays: 6, zone: 'La Guardia' });
+  addOffer({ supplier: 6, liters: 5000, price: 19.25, availableInDays: 8, zone: 'Vallegrande' });
+  addOffer({ supplier: 2, liters: 2500, price: 19.80, availableInDays: 14, zone: 'Okinawa' });
+  addOffer({ supplier: 5, liters: 7000, price: 18.60, availableInDays: 10, zone: 'Tarija' });
+  addOffer({ supplier: 8, liters: 3500, price: 19.40, availableInDays: 7, zone: 'San Julián' });
 
   // ---------- HISTÓRICO: demandas, matches, operaciones ----------
   const random = rng(20260913);
@@ -341,7 +341,7 @@ export function buildSeed(): SeedData {
       producer_id: producer.id,
       requested_liters: h.liters,
       remaining_liters: 0,
-      target_price: 3.8,
+      target_price: 19.30,
       required_date: dateOnly(dayOffset(-h.daysAgo + 4)),
       location_name: producer.location_name,
       latitude: producer.latitude,
@@ -364,7 +364,7 @@ export function buildSeed(): SeedData {
     split.forEach((share, idx) => {
       const sup = nearby[idx];
       const liters = Math.round((h.liters * share) / 100) * 100;
-      const price = Math.round((3.62 + random() * 0.28) * 100) / 100;
+      const price = Math.round((18.4 + random() * 1.45) * 100) / 100;
       const offer = addOffer({
         supplier: supplier_profiles.indexOf(sup) + 1,
         liters,
@@ -477,7 +477,7 @@ export function buildSeed(): SeedData {
     producer_id: agroCotoca.id,
     requested_liters: 10000,
     remaining_liters: 10000,
-    target_price: 3.8,
+    target_price: 19.30,
     required_date: dateOnly(dayOffset(15)),
     location_name: agroCotoca.location_name,
     latitude: agroCotoca.latitude,
@@ -494,7 +494,7 @@ export function buildSeed(): SeedData {
     producer_id: trebol.id,
     requested_liters: 4000,
     remaining_liters: 4000,
-    target_price: 3.85,
+    target_price: 19.55,
     required_date: dateOnly(dayOffset(9)),
     location_name: trebol.location_name,
     latitude: trebol.latitude,
@@ -514,7 +514,7 @@ export function buildSeed(): SeedData {
       producer_id: dist.id,
       requested_liters: liters,
       remaining_liters: 0,
-      target_price: 3.8,
+      target_price: 19.30,
       required_date: dateOnly(dayOffset(-20 + i * 6)),
       location_name: dist.location_name,
       latitude: dist.latitude,
@@ -530,7 +530,7 @@ export function buildSeed(): SeedData {
     producer_id: dist.id,
     requested_liters: 20000,
     remaining_liters: 20000,
-    target_price: 3.6,
+    target_price: 18.3,
     required_date: dateOnly(dayOffset(3)),
     location_name: dist.location_name,
     latitude: dist.latitude,
@@ -546,7 +546,7 @@ export function buildSeed(): SeedData {
       producer_id: dist.id,
       requested_liters: 1500,
       remaining_liters: 1500,
-      target_price: 3.8,
+      target_price: 19.30,
       required_date: dateOnly(dayOffset(4)),
       location_name: dist.location_name,
       latitude: dist.latitude,

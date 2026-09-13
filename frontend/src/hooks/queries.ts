@@ -8,6 +8,7 @@ import type {
   DemandView,
   ImpactMetrics,
   MapData,
+  MarketSnapshot,
   MatchView,
   MatchingResponse,
   MeStats,
@@ -34,6 +35,7 @@ export const keys = {
   impact: ['analytics', 'impact'] as const,
   users: ['users'] as const,
   map: ['map'] as const,
+  market: ['market'] as const,
 };
 
 export const useConfig = () => useQuery({ queryKey: keys.config, queryFn: () => apiGet<AppConfig>('/config'), staleTime: Infinity });
@@ -54,6 +56,7 @@ export const useAnomalies = () => useQuery({ queryKey: keys.anomalies, queryFn: 
 export const useDashboard = () => useQuery({ queryKey: keys.dashboard, queryFn: () => apiGet<DashboardMetrics>('/analytics/dashboard') });
 export const useImpact = () => useQuery({ queryKey: keys.impact, queryFn: () => apiGet<ImpactMetrics>('/analytics/impact') });
 export const useUsers = () => useQuery({ queryKey: keys.users, queryFn: () => apiGet<UserRow[]>('/users') });
+export const useMarket = () => useQuery({ queryKey: keys.market, queryFn: () => apiGet<MarketSnapshot>('/market') });
 export const useMapData = () => useQuery({ queryKey: keys.map, queryFn: () => apiGet<MapData>('/map') });
 
 /** Invalida todo lo que depende del estado del mercado. */

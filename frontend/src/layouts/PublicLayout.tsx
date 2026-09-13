@@ -17,6 +17,7 @@ export function PublicLayout() {
             <a href="/#problema" className="hover:text-slate-900">El problema</a>
             <a href="/#solucion" className="hover:text-slate-900">Solución</a>
             <a href="/#motor" className="hover:text-slate-900">El motor</a>
+            <a href="/#seguridad" className="hover:text-slate-900">Confianza</a>
           </nav>
           <div className="flex items-center gap-2">
             <span className="hidden sm:block">

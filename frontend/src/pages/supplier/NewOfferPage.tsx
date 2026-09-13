@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 import { Fuel, Send } from 'lucide-react';
@@ -20,8 +21,10 @@ export default function NewOfferPage() {
   const create = useCreateOffer();
   const supplier = session?.supplier;
 
-  const [liters, setLiters] = useState('5000');
-  const [price, setPrice] = useState('3.75');
+  // El Mercado P2P enlaza aquí con volumen, zona y precio sugeridos.
+  const [sp] = useSearchParams();
+  const [liters, setLiters] = useState(sp.get('liters') ?? '5000');
+  const [price, setPrice] = useState(sp.get('price') ?? '19.05');
   const [date, setDate] = useState(plusDays(2));
   const [location, setLocation] = useState<LocationValue>({
     location_name: supplier?.location_name ?? 'Santa Cruz de la Sierra',

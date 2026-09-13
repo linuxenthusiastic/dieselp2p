@@ -199,9 +199,9 @@ La *service role key* nunca debe llegar al frontend. El navegador solo usa la *a
 | `FORCE_MEMORY_STORE` | `false` | Fuerza el store en memoria |
 | `CORS_ORIGINS` | `http://localhost:5173,…` | Orígenes permitidos |
 | `ALLOW_LAN_ORIGINS` | `true` | Acepta orígenes de la red local (`vite --host`). Ponlo en `false` en producción |
-| `COST_PER_KM` | `12` | Costo logístico ficticio por km |
-| `BASE_TRIP_COST` | `150` | Costo fijo ficticio por viaje |
-| `REFERENCE_PRICE_PER_LITER` | `4.15` | Precio de referencia ficticio (base del ahorro) |
+| `COST_PER_KM` | `28` | Costo logístico ficticio por km |
+| `BASE_TRIP_COST` | `400` | Costo fijo ficticio por viaje |
+| `REFERENCE_PRICE_PER_LITER` | `21` | Precio de referencia ficticio en Bs/L (base del ahorro) |
 | `TRUCK_CAPACITY_LITERS` | `10000` | Capacidad típica de cisterna |
 | `MAX_RADIUS_KM` | `350` | Radio máximo de búsqueda |
 | `MAX_SUPPLIERS_PER_MATCH` | `4` | Máximo de ofertas combinadas |
@@ -327,6 +327,7 @@ Todas las rutas cuelgan de `/api`. La autenticación usa `Authorization: Bearer 
 | `GET` | `/analytics/dashboard`, `/analytics/impact`, `/analytics/me` | autenticado |
 | `GET` `PATCH` | `/users`, `/users/:id` | admin |
 | `GET` | `/map` | autenticado |
+| `GET` | `/market` | proveedor, admin |
 | `POST` | `/demo/reset` | admin |
 
 ## 13. Modelo de datos

@@ -339,3 +339,38 @@ export interface PublicVerification {
   updated_at: string;
   disclaimer: string;
 }
+
+// ---------- Mercado P2P (vista del proveedor) ----------
+
+export interface Oportunidad {
+  demand_id: string;
+  location_name: string;
+  activity_type: string;
+  required_date: string;
+  liters: number;
+  distance_km: number;
+  precio_a_batir: number | null;
+  precio_sugerido: number | null;
+  logistica_por_litro: number;
+  cobertura_posible: number;
+  ya_compite: boolean;
+}
+
+export interface MarketSnapshot {
+  referencia: {
+    precio_referencia: number;
+    precio_promedio_mercado: number | null;
+    precio_minimo: number | null;
+    precio_maximo: number | null;
+    ofertas_activas: number;
+    litros_disponibles: number;
+  };
+  demanda: {
+    abiertas: number;
+    litros_solicitados: number;
+    por_zona: Array<{ zone: string; litros: number; demandas: number }>;
+  };
+  mi_posicion: { precio_promedio: number | null; litros_activos: number; percentil_precio: number | null } | null;
+  precios_por_zona: Array<{ zone: string; promedio: number; minimo: number; maximo: number; ofertas: number }>;
+  oportunidades: Oportunidad[];
+}

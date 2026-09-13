@@ -28,7 +28,7 @@ export default function NewDemandPage() {
   // Los campos numéricos se guardan como texto: permite borrarlos por completo
   // sin que un Number('') los deje pegados en 0 mientras se escribe.
   const [liters, setLiters] = useState('10000');
-  const [targetPrice, setTargetPrice] = useState('3.80');
+  const [targetPrice, setTargetPrice] = useState('19.30');
   const [date, setDate] = useState(plusDays(7));
   const [activity, setActivity] = useState<ActivityType>(producer?.activity_type ?? 'Agricultura');
   const [location, setLocation] = useState<LocationValue>({

@@ -6,11 +6,11 @@ import 'dotenv/config';
  */
 export const params = {
   /** Costo logístico ficticio por km recorrido por una cisterna (Bs/km, por viaje). */
-  costPerKm: Number(process.env.COST_PER_KM ?? 12),
+  costPerKm: Number(process.env.COST_PER_KM ?? 28),
   /** Costo fijo ficticio por viaje (carga, maniobra, peajes). Evita que un retiro cercano cueste Bs 0. */
-  baseTripCost: Number(process.env.BASE_TRIP_COST ?? 150),
+  baseTripCost: Number(process.env.BASE_TRIP_COST ?? 400),
   /** Precio de referencia ficticio de un mercado no optimizado (Bs/L). Incluye intermediación estimada. */
-  referencePricePerLiter: Number(process.env.REFERENCE_PRICE_PER_LITER ?? 4.15),
+  referencePricePerLiter: Number(process.env.REFERENCE_PRICE_PER_LITER ?? 21),
   /** Capacidad típica de una cisterna (L) para estimar viajes en el escenario de referencia. */
   truckCapacityLiters: Number(process.env.TRUCK_CAPACITY_LITERS ?? 10000),
   /** Radio máximo de búsqueda de ofertas (km). */

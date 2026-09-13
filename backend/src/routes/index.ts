@@ -10,6 +10,7 @@ import { anomaliesRouter } from '../controllers/anomaliesController.js';
 import { analyticsRouter } from '../controllers/analyticsController.js';
 import { usersRouter } from '../controllers/usersController.js';
 import { mapRouter } from '../controllers/mapController.js';
+import { marketRouter } from '../controllers/marketController.js';
 import { demoRouter } from '../controllers/demoController.js';
 
 export const apiRouter = Router();
@@ -27,4 +28,5 @@ apiRouter.use(anomaliesRouter);
 apiRouter.use(analyticsRouter);
 apiRouter.use(usersRouter);
 apiRouter.use(mapRouter);
+apiRouter.use(marketRouter);
 apiRouter.use(demoRouter);

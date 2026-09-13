@@ -43,7 +43,7 @@ try {
   const created = await api('/demands', {
     method: 'POST',
     token: producer,
-    body: { requested_liters: 10000, target_price: 3.8, required_date: '2026-09-20', location_name: 'Santa Cruz de la Sierra', latitude: -17.7833, longitude: -63.1821, activity_type: 'Agricultura' },
+    body: { requested_liters: 10000, target_price: 19.3, required_date: '2026-09-20', location_name: 'Santa Cruz de la Sierra', latitude: -17.7833, longitude: -63.1821, activity_type: 'Agricultura' },
   });
   check(created.demand.status === 'OPEN', `demanda creada ${created.demand.id.slice(0, 8)} (${created.anomalies.length} anomalías)`);
 
@@ -90,7 +90,7 @@ try {
   const demand2 = await api('/demands', {
     method: 'POST',
     token: producer,
-    body: { requested_liters: 4000, target_price: 3.9, required_date: '2026-09-22', location_name: 'Cotoca', latitude: -17.75, longitude: -62.9833, activity_type: 'Agricultura' },
+    body: { requested_liters: 4000, target_price: 19.8, required_date: '2026-09-22', location_name: 'Cotoca', latitude: -17.75, longitude: -62.9833, activity_type: 'Agricultura' },
   });
   const match2 = (await api('/matching/find', { method: 'POST', token: producer, body: { demand_id: demand2.demand.id } })).match;
   const op2 = await api(`/matches/${match2.id}/confirm`, { method: 'POST', token: producer });
