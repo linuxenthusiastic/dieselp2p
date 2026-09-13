@@ -1,0 +1,16 @@
+{
+  "name": "dieselp2p",
+  "private": true,
+  "version": "0.1.0",
+  "description": "DieselP2P — Mercado inteligente de combustible productivo (MVP demo, datos simulados)",
+  "scripts": {
+    "install:all": "npm --prefix backend install && npm --prefix frontend install",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build": "npm --prefix backend run build && npm --prefix frontend run build",
+    "typecheck": "npm --prefix backend run typecheck && npm --prefix frontend run typecheck",
+    "test:flow": "npm --prefix backend run test:flow",
+    "seed:sql": "npm --prefix backend run seed:sql",
+    "dev:frontend:host": "npm --prefix frontend run dev:host"
+  }
+}
